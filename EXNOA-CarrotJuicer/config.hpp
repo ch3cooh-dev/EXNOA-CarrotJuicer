@@ -11,7 +11,8 @@ namespace config
 		bool enable_ansi_colors;
 
 		bool enable_notifier;
-		std::string notifier_host;
+		std::string notifier_send_response_host;
+		std::string notifier_send_request_host;
 		int notifier_connection_timeout_msec;
 		bool notifier_print_error;
 

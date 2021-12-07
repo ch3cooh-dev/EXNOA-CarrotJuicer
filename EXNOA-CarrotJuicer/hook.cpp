@@ -110,9 +110,18 @@ namespace
 		if (config::get().save_request)
 		{
 			const auto out_path = std::string("CarrotJuicer\\").append(current_time()).append("Q.msgpack");
-			write_file(out_path, src, srcSize);
+			write_file(out_path, src + 170, srcSize - 170);
 			std::cout << "wrote request to " << out_path << "\n";
 		}
+
+		const std::string data(src + 170, srcSize - 170);
+
+		auto notifier_thread = std::thread([&]
+			{
+				notifier::notify_request(data);
+			});
+
+		notifier_thread.join();
 
 		return ret;
 	}

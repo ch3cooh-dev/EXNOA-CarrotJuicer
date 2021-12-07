@@ -14,7 +14,7 @@ namespace config
 	config_struct config = {
 		true, true,
 		true,
-		false, "", 100, true,
+		false, "", "",100, true,
 		true,
 	};
 
@@ -35,7 +35,8 @@ namespace config
 			CJCONFIG_READ_PROPERTY(save_response, j, config);
 			CJCONFIG_READ_PROPERTY(enable_ansi_colors, j, config);
 			CJCONFIG_READ_PROPERTY(enable_notifier, j, config);
-			CJCONFIG_READ_PROPERTY(notifier_host, j, config);
+			CJCONFIG_READ_PROPERTY(notifier_send_response_host, j, config);
+			CJCONFIG_READ_PROPERTY(notifier_send_request_host, j, config);
 			CJCONFIG_READ_PROPERTY(notifier_connection_timeout_msec, j, config);
 			CJCONFIG_READ_PROPERTY(notifier_print_error, j, config);
 			CJCONFIG_READ_PROPERTY(aoharu_team_sort_with_speed, j, config);
